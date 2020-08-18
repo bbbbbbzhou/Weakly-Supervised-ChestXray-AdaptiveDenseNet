@@ -18,7 +18,7 @@ import pdb
 parser = argparse.ArgumentParser(description='Weakly Supervised Learning for Chest X-ray')
 
 # model name
-parser.add_argument('--experiment_name', type=str, default='train_ChestXray14_densensetADA', help='give a model name before training')
+parser.add_argument('--experiment_name', type=str, default='train_ChestXray14_densenetADA', help='give a model name before training')
 parser.add_argument('--model_type', type=str, default='model_wsl', help='type of model: model_wsl')
 parser.add_argument('--resume', type=str, default=None, help='Filename of the checkpoint to resume')
 
@@ -39,7 +39,7 @@ parser.add_argument('--alpha', type=float, default=1, help='alpha for spatial po
 # training options
 parser.add_argument('--n_epochs', type=int, default=1000, help='number of epoch')
 parser.add_argument('--batch_size', type=int, default=32, help='training batch size')
-parser.add_argument('--AUG', default=True, action='store_true', help='use augmentation')
+parser.add_argument('--AUG', default=False, action='store_true', help='use augmentation')
 parser.add_argument('--train_osize', type=int, default=270, help='random scale')
 parser.add_argument('--train_angle', type=int, default=20, help='random rotation angle')
 parser.add_argument('--train_fineSize', nargs='+', type=float, default=[256, 256], help='random crop')
